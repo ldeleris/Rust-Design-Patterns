@@ -5,5 +5,6 @@ use design_patterns::*;
 fn main() {
   println!("Design patterns");
   factory();
+  abstract_factory();
 }
 
