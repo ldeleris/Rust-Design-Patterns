@@ -1,0 +1,12 @@
+[package]
+name = "design-patterns"
+version = "0.1.0"
+authors = ["Laurent DELERIS <laurent.deleris@hotmail.fr>"]
+
+[dependencies]
+creational = { path = "creational" }
+structural = { path = "structural" }
+behavioral = { path = "behavioral" }
+functional = { path = "functional" }
+
+[workspace]
