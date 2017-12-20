@@ -11,5 +11,6 @@ fn main() {
   singleton();
   builder();
   builder_type_safe();
+  builder_optional();
 }
 

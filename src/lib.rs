@@ -82,6 +82,36 @@ pub fn builder_type_safe() {
     println!("{:?}", person);
 }
 
+pub fn builder_optional() {
+    use creational::builder::optional::*;
+
+    println!("builder optional");
+    let person = Person::new()
+        .set_first_name(String::from("Laurent"))
+        .set_last_name(String::from("Deleris"))
+        .set_age(50);
+ 
+    println!("{:?}", person);
+
+    let person = Person::new()
+        .set_first_name(String::from("Laurent"))
+        .set_last_name(String::from("Deleris"));
+ 
+    println!("{:?}", person);
+
+    let person = Person::new_with_check();
+    let person = Person::set_with_check_first(&person, String::from("Laurent"));
+    let person = Person::set_with_check_last(&person, String::from("Deleris"));
+    let person = Person::set_with_check_age(&person, 50);
+    println!("{:?}", person);
+
+    let person = Person::new_with_check();
+    let person = Person::set_with_check_first(&person, String::from("12345678910"));
+    let person = Person::set_with_check_last(&person, String::from("Deleris"));
+    let person = Person::set_with_check_age(&person, 50);
+    println!("{:?}", person);
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
