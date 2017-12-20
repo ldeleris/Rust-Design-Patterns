@@ -4,6 +4,7 @@ pub mod static_factory;
 pub mod lazy; 
 pub mod singleton;
 pub mod builder;
+pub mod prototype;
 
 #[cfg(test)]
 mod tests {

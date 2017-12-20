@@ -12,5 +12,6 @@ fn main() {
   builder();
   builder_type_safe();
   builder_optional();
+  prototype();
 }
 

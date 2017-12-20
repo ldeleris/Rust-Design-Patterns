@@ -45,7 +45,7 @@ pub fn singleton() {
     println!("singleton");
     AppRegistry::print();
     println!("Sleeping for 5 seconds.");
-    thread::sleep(time::Duration::from_secs(5));
+    thread::sleep(time::Duration::from_secs(1));
     println!("I woke up.");
     AppRegistry::add_user("1", "Laurent");
     AppRegistry::add_user("2", "Pierre");
@@ -110,6 +110,28 @@ pub fn builder_optional() {
     let person = Person::set_with_check_last(&person, String::from("Deleris"));
     let person = Person::set_with_check_age(&person, 50);
     println!("{:?}", person);
+}
+
+pub fn prototype() {
+    use creational::prototype::*;
+
+    println!("prototype");
+
+    let initial_cell = Cell {
+        dna: String::from("abcd"),
+        proteins: vec![String::from("protein1"), String::from("protein2")],
+    };
+    let copy1 = initial_cell.clone();
+    let copy2 = initial_cell.clone();
+    let copy3 = Cell {
+        dna: String::from("1234"),
+        ..initial_cell.clone()
+    };
+    println!("The prototype is: {:?}", initial_cell);
+    println!("cell 1: {:?}", copy1);
+    println!("cell 2: {:?}", copy2);
+    println!("cell 3: {:?}", copy3);
+    println!("1 and 2 are equal: {}", copy1 == copy2);
 }
 
 #[cfg(test)]
