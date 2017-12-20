@@ -3,6 +3,7 @@ pub mod abstract_factory;
 pub mod static_factory;
 pub mod lazy; 
 pub mod singleton;
+pub mod builder;
 
 #[cfg(test)]
 mod tests {

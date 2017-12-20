@@ -57,6 +57,31 @@ pub fn singleton() {
     println!("All users registred are: {:?}", AppRegistry::get_all_user_names());
 }
 
+pub fn builder() {
+    use creational::builder::standard::*;
+
+    println!("builder");
+    let person = PersonBuilder::new()
+        .set_first_name(String::from("Laurent"))
+        .set_last_name(String::from("Deleris"))
+        .set_age(50)
+        .build();
+    println!("{:?}", person);
+}
+
+
+pub fn builder_type_safe() {
+    use creational::builder::type_safe::*;
+
+    println!("builder type safe");
+    let person = PersonBuilder::new()
+        .set_first_name(String::from("Laurent"))
+        .set_last_name(String::from("Deleris"))
+        .set_age(50);
+ 
+    println!("{:?}", person);
+}
+
 #[cfg(test)]
 mod tests {
     #[test]

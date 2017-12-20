@@ -9,5 +9,7 @@ fn main() {
   static_factory();
   lazy();
   singleton();
+  builder();
+  builder_type_safe();
 }
 
