@@ -74,6 +74,7 @@ pub fn bridge() {
 }
 
 pub fn composite() {
+    
     use composite::*;
 
     println!("Composite");
@@ -98,7 +99,6 @@ pub fn composite() {
     tree.add(Box::new(subtree3));
 
     tree.print(String::from("-"));
-
 }
 
 #[cfg(test)]

@@ -1,3 +1,4 @@
+
 pub trait Node {
   fn print(&self, prefix: String);
 }
