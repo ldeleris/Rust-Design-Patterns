@@ -6,6 +6,7 @@ extern crate functional;
 pub fn creational() {
     use creational::*; 
 
+    println!("==== Creational ====");
     factory();
     abstract_factory();
     static_factory();
@@ -20,15 +21,21 @@ pub fn creational() {
 pub fn structural() {
     use structural::*;
 
+    println!("==== Structural ====");
     adapter();
+    decorator();
 }
 
 pub fn behavioral() {
-    use behavioral::*;
+    //use behavioral::*;
+
+    println!("==== Behavioral ====");
 }
 
 pub fn functional() {
-    use functional::*;
+    //use functional::*;
+
+    println!("==== Functional ====");
 }
 
 #[cfg(test)]

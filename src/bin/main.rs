@@ -4,7 +4,9 @@ use design_patterns::*;
 
 fn main() {
   println!("Design patterns");
-  //creational();
+  creational();
   structural();
+  behavioral();
+  functional();
 }
 
