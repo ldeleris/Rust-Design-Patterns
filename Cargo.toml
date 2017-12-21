@@ -8,5 +8,6 @@ creational = { path = "creational" }
 structural = { path = "structural" }
 behavioral = { path = "behavioral" }
 functional = { path = "functional" }
+colored = "1.6"
 
 [workspace]

@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["Laurent DELERIS <laurent.deleris@hotmail.fr>"]
 
 [dependencies]
+colored = "1.6"

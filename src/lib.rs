@@ -1,3 +1,4 @@
+extern crate colored;
 extern crate creational;
 extern crate structural;
 extern crate behavioral;
@@ -24,6 +25,8 @@ pub fn structural() {
     println!("==== Structural ====");
     adapter();
     decorator();
+    bridge();
+    composite();
 }
 
 pub fn behavioral() {
