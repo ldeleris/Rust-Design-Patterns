@@ -30,6 +30,7 @@ pub fn structural() {
     facade();
     facade_with_derive_trait();
     flyweight();
+    proxy();
 }
 
 pub fn behavioral() {

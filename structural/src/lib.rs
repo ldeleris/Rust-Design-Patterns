@@ -8,7 +8,7 @@ pub mod bridge;
 pub mod composite;
 pub mod facade;
 pub mod flyweight;
-//pub mod proxy;
+pub mod proxy;
 
 extern crate colored;
 
@@ -146,6 +146,23 @@ pub fn flyweight() {
 
     println!("Total number of circle objects created: {}", circles.circles_created());
 
+}
+
+pub fn proxy() {
+    use proxy::*;
+    use std::collections::HashMap;
+
+    println!("Proxy");
+    let mut file_map: HashMap<&str, (&str, Box<FileReader>)> = HashMap::new();
+    file_map.insert("file1.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file1.txt")))));
+    file_map.insert("file2.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file2.txt")))));
+    file_map.insert("file3.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file3.txt")))));
+    file_map.insert("file4.txt", ("FileReaderReal", Box::new(FileReaderReal::new(String::from("file1.txt")))));
+    
+    println!("Created the map. You should have seen file1.txt read because it wasn't used in a proxy.");
+    for (k, v) in file_map.iter_mut() { 
+        println!("Reading {} from the {}: {}", k, v.0, v.1.read_file_contents()); 
+    }
 }
 
 #[cfg(test)]
