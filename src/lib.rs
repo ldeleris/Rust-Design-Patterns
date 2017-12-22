@@ -27,6 +27,8 @@ pub fn structural() {
     decorator();
     bridge();
     composite();
+    facade();
+    facade_with_derive_trait();
 }
 
 pub fn behavioral() {

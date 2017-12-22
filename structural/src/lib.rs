@@ -1,8 +1,12 @@
+
+#[macro_use]
+extern crate data_downloader_derive; 
+
 pub mod adapter;
 pub mod decorator;
 pub mod bridge;
 pub mod composite;
-//pub mod facade;
+pub mod facade;
 //pub mod flyweight;
 //pub mod proxy;
 
@@ -99,6 +103,26 @@ pub fn composite() {
     tree.add(Box::new(subtree3));
 
     tree.print(String::from("-"));
+}
+
+pub fn facade() {
+    use facade::with_struct::*;
+
+    println!("Facade with derive trait");
+    let url = String::from("google.com");
+    let reader = DataReader;
+    println!("{:?}", reader.read_person(url));
+
+}
+
+pub fn facade_with_derive_trait() {
+    use facade::with_derive_trait::*;
+
+    println!("Facade with derive trait");
+    let url = String::from("google.com");
+    let reader = DataReader;
+    println!("{:?}", reader.read_person(url));
+
 }
 
 #[cfg(test)]

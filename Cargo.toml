@@ -8,6 +8,7 @@ creational = { path = "creational" }
 structural = { path = "structural" }
 behavioral = { path = "behavioral" }
 functional = { path = "functional" }
+data-downloader-derive = { path = "data-downloader-derive" }
 colored = "1.6"
 
 [workspace]
