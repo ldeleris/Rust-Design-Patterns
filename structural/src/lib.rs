@@ -7,7 +7,7 @@ pub mod decorator;
 pub mod bridge;
 pub mod composite;
 pub mod facade;
-//pub mod flyweight;
+pub mod flyweight;
 //pub mod proxy;
 
 extern crate colored;
@@ -122,6 +122,29 @@ pub fn facade_with_derive_trait() {
     let url = String::from("google.com");
     let reader = DataReader;
     println!("{:?}", reader.read_person(url));
+
+}
+
+pub fn flyweight() {
+    use flyweight::*;
+
+    println!("Flyweight");
+    let mut graphic = Graphic::new();
+    let mut circles = CircleFactory::new();
+    graphic.add_circle(1, 1, 1.0, circles.make_circle(Color::Green));
+    graphic.add_circle(1, 2, 1.0, circles.make_circle(Color::Red));
+    graphic.add_circle(2, 1, 1.0, circles.make_circle(Color::Blue));
+    graphic.add_circle(2, 2, 1.0, circles.make_circle(Color::Green));
+    graphic.add_circle(2, 3, 1.0, circles.make_circle(Color::Yellow));
+    graphic.add_circle(3, 2, 1.0, circles.make_circle(Color::Magenta));
+    graphic.add_circle(3, 3, 1.0, circles.make_circle(Color::Blue));
+    graphic.add_circle(4, 3, 1.0, circles.make_circle(Color::Blue));
+    graphic.add_circle(3, 4, 1.0, circles.make_circle(Color::Yellow));
+    graphic.add_circle(4, 4, 1.0, circles.make_circle(Color::Red));
+
+    graphic.draw();
+
+    println!("Total number of circle objects created: {}", circles.circles_created());
 
 }
 

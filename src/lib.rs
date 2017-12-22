@@ -29,6 +29,7 @@ pub fn structural() {
     composite();
     facade();
     facade_with_derive_trait();
+    flyweight();
 }
 
 pub fn behavioral() {
