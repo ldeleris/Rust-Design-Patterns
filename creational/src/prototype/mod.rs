@@ -3,7 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
-//! use prototype::*;
+//! use creational::prototype::*;
 //! 
 //! let initial_cell = Cell {
 //!     dna: String::from("abcd"),

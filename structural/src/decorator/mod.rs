@@ -1,43 +1,26 @@
 //! `decorator` module.
 //!
-//! # Example
-//! 
-//! ``` rust
-//! use decorator::desserts::*;
-//! 
-//! let dessert = Crepe::new();
-//! let dessert = Chantilly::new(dessert);
-//! println!("{}", dessert.to_string());
-//! 
-//! let dessert = Gauffre::new();
-//! let dessert = Chocolat::new(dessert);
-//! let dessert = Chantilly::new(dessert);
-//! println!("{}", dessert.to_string());
-//! 
-//! let dessert = Chocolat::new(Chantilly::new(Crepe::new()));
-//! println!("{}", dessert.to_string());
-//! 
-//! use decorator::input_readers::*;
-//! 
-//! let reader = AdvancedInputReader::new("input.txt");
-//! let mut reader = CapitalizedInputReader::new(reader);
-//! let res = reader.read_lines();
-//! for r in res.iter() {
-//!     println!("{}", r);
-//! }
-//! 
-//! let reader = AdvancedInputReader::new("input.txt");
-//! let reader = CapitalizedInputReader::new(reader);
-//! let mut reader = LenghtInputReader::new(reader);
-//! let res = reader.read_lines();
-//! for r in res.iter() {
-//!     println!("{}", r);
-//! }
-//! ```
  
 pub mod desserts {
   //! `desserts` module.
   //! 
+  //! # Example
+  //! 
+  //! ```rust
+  //! use structural::decorator::desserts::*;
+  //! 
+  //! let dessert = Crepe::new();
+  //! let dessert = Chantilly::new(dessert);
+  //! println!("{}", dessert.to_string());
+  //! 
+  //! let dessert = Gauffre::new();
+  //! let dessert = Chocolat::new(dessert);
+  //! let dessert = Chantilly::new(dessert);
+  //! println!("{}", dessert.to_string());
+  //! 
+  //! let dessert = Chocolat::new(Chantilly::new(Crepe::new()));
+  //! println!("{}", dessert.to_string());
+  //! ```
 
   pub trait Dessert {
     fn get_label(&self) -> String;
@@ -156,6 +139,26 @@ pub mod desserts {
 pub mod input_readers {
   //! `imput_readers` module.
   //! 
+  //! # Example
+  //! 
+  //! ```rust,ignore
+  //! use structural::decorator::input_readers::*;
+  //! 
+  //! let reader = AdvancedInputReader::new("input.txt");
+  //! let mut reader = CapitalizedInputReader::new(reader);
+  //! let res = reader.read_lines();
+  //! for r in res.iter() {
+  //!     println!("{}", r);
+  //! }
+  //! 
+  //! let reader = AdvancedInputReader::new("input.txt");
+  //! let reader = CapitalizedInputReader::new(reader);
+  //! let mut reader = LenghtInputReader::new(reader);
+  //! let res = reader.read_lines();
+  //! for r in res.iter() {
+  //!     println!("{}", r);
+  //! }
+  //! ```
 
   use std::io::BufReader;
   use std::fs::File;

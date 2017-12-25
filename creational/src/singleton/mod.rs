@@ -3,7 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
-//! use singleton::*;
+//! use creational::singleton::*;
 //! use std::{thread, time};
 //! 
 //! println!("{}", AppRegistry::print());

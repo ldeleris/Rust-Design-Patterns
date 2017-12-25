@@ -2,8 +2,8 @@
 //!
 //! # Example
 //! 
-//! ``` rust
-//! use proxy::*;
+//! ```rust,ignore
+//! use structural::proxy::*;
 //! use std::collections::HashMap;
 //! 
 //! let mut file_map: HashMap<&str, (&str, Box<FileReader>)> = HashMap::new();

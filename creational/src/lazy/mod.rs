@@ -2,8 +2,9 @@
 //!
 //! # Example
 //! 
-//! ``` rust
-//! use lazy::*;
+//! ```rust,ignore
+//! 
+//! use creational::lazy::*;
 //! 
 //! let mut circle = Circle::new();
 //! println!("The basic area for a circle with radius 2.5 is {}", circle.area(2.5, false));

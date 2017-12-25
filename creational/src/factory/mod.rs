@@ -3,7 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
-//! use factory::*;
+//! use creational::factory::*;
 //! 
 //! let client_mysql: Box<DataBaseClient> = MySqlClient::new();
 //! let client_pgsql: Box<DataBaseClient> = PgSqlClient::new();

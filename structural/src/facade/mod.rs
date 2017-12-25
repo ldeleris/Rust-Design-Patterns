@@ -14,7 +14,7 @@ pub mod with_struct {
   //! # Example
   //! 
   //! ``` rust
-  //!  use facade::with_derive_trait::*;
+  //!  use structural::facade::with_derive_trait::*;
   //! 
   //!  let url = String::from("google.com");
   //!  let reader = DataReader;
@@ -70,7 +70,7 @@ pub mod with_derive_trait {
   //! # Example
   //! 
   //! ``` rust
-  //! use facade::with_struct::*;
+  //! use structural::facade::with_struct::*;
   //! 
   //! let url = String::from("google.com");
   //! let reader = DataReader;

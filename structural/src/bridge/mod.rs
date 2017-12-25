@@ -3,7 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
-//! use bridge::key::*;
+//! use structural::bridge::key::*;
 //! 
 //! let house = HouseOneDoor::new(Box::new(HouseDoorKey));
 //! println!("{}", house.enter());

@@ -7,7 +7,7 @@ pub mod standard {
   //! # Example
   //! 
   //! ``` rust
-  //! use builder::standard::*;
+  //! use creational::builder::standard::*;
   //! 
   //! let person = PersonBuilder::new()
   //!     .set_first_name(String::from("Laurent"))
@@ -75,7 +75,7 @@ pub mod type_safe {
   //! # Example
   //! 
   //! ``` rust
-  //! use builder::type_safe::*;
+  //! use creational::builder::type_safe::*;
   //! 
   //! let person = PersonBuilder::new()
   //!     .set_first_name(String::from("Laurent"))
@@ -143,7 +143,7 @@ pub mod optional {
   //! # Example
   //! 
   //! ``` rust
-  //! use builder::optional::*;
+  //! use creational::builder::optional::*;
   //! 
   //! let person = Person::new()
   //!     .set_first_name(String::from("Laurent"))

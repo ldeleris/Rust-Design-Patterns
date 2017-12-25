@@ -3,7 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
-//! use composite::*;
+//! use structural::composite::*;
 //! 
 //! let mut tree = Tree::new();
 //! tree.add(Box::new(Leaf::new(String::from("leaf 1"))));

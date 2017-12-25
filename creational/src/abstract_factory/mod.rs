@@ -3,7 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
-//! use abstract_factory::*;
+//! use creational::abstract_factory::*;
 //! 
 //! let client_mysql: DataBaseClientFactory = DataBaseClientFactory::new(MySqlFactory::new());
 //! let client_pgsql: DataBaseClientFactory = DataBaseClientFactory::new(PgSqlFactory::new());

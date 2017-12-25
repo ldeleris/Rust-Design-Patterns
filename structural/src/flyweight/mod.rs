@@ -3,7 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
-//! use flyweight::*;
+//! use structural::flyweight::*;
 //! 
 //! let mut graphic = Graphic::new();
 //! let mut circles = CircleFactory::new();

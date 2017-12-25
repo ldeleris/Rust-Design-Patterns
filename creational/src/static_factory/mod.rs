@@ -3,6 +3,7 @@
 //! # Example
 //! 
 //! ``` rust
+//! use creational::static_factory::*;
 //! 
 //! let animal: Box<Animal> = from_str("Bird");
 //! println!("Animal: {}", animal.print());
