@@ -11,7 +11,9 @@ pub mod interpreter;
 pub fn value_object() {
     use value_object::*;
 
+    println!("------------");
     println!("value object");
+    println!("------------");
 
     let third_of_march = Date::new(3, String::from("MARCH"), 2016);
     let four_of_july = Date::new(4, String::from("JULY"), 2016);
@@ -25,28 +27,49 @@ pub fn value_object() {
 
 pub fn null_object() {
     use null_object::*;
+    use std::{thread, time};
 
+    println!("-----------");
     println!("null object");
+    println!("-----------");
+
+    let mut data_generator = DataGenerator::new();
+    data_generator.run();
+    for _ in 0..10 {
+        thread::sleep(time::Duration::from_millis(10));
+        println!("Message: {:?}", data_generator.get_message());
+    };
 }
 pub fn strategy() {
     use strategy::*;
 
+    println!("--------");
     println!("strategy");
+    println!("--------");
+
 }
 pub fn command() {
     use command::*;
 
+    println!("-------");
     println!("command");
+    println!("-------");
+
 }
 pub fn chain_of_responsability() {
     use chain_of_responsability::*;
 
+    println!("-----------------------");
     println!("chain of responsability");
+    println!("-----------------------");
+
 }
 pub fn interpreter() {
     use interpreter::*;
 
+    println!("-----------");
     println!("interpreter");
+    println!("-----------");
 }
 
 #[cfg(test)]
