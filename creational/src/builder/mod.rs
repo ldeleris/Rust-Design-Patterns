@@ -1,5 +1,23 @@
+//! `builder` module.
+//!
+
 pub mod standard {
-  #[derive(Debug)]
+  //! `builder standard` module.
+  //!
+  //! # Example
+  //! 
+  //! ``` rust
+  //! use builder::standard::*;
+  //! 
+  //! let person = PersonBuilder::new()
+  //!     .set_first_name(String::from("Laurent"))
+  //!     .set_last_name(String::from("Deleris"))
+  //!     .set_age(50)
+  //!     .build();
+  //! println!("{:?}", person);
+  //! ```
+
+  #[derive(Debug, PartialEq)]
   pub struct Person {
     first_name: String,
     last_name: String,
@@ -52,7 +70,22 @@ pub mod standard {
 }
 
 pub mod type_safe {
-  #[derive(Debug)]
+  //! `builder type safe` module.
+  //!
+  //! # Example
+  //! 
+  //! ``` rust
+  //! use builder::type_safe::*;
+  //! 
+  //! let person = PersonBuilder::new()
+  //!     .set_first_name(String::from("Laurent"))
+  //!     .set_last_name(String::from("Deleris"))
+  //!     .set_age(50);
+  //! 
+  //! println!("{:?}", person);
+  //! ```
+
+  #[derive(Debug, PartialEq)]
   pub struct Person {
     first_name: String,
     last_name: String,
@@ -105,7 +138,40 @@ pub mod type_safe {
 }
 
 pub mod optional {
-#[derive(Debug)]
+  //! `builder optional` module.
+  //!
+  //! # Example
+  //! 
+  //! ``` rust
+  //! use builder::optional::*;
+  //! 
+  //! let person = Person::new()
+  //!     .set_first_name(String::from("Laurent"))
+  //!     .set_last_name(String::from("Deleris"))
+  //!     .set_age(50);
+  //! 
+  //! println!("{:?}", person);
+  //! 
+  //! let person = Person::new()
+  //!     .set_first_name(String::from("Laurent"))
+  //!     .set_last_name(String::from("Deleris"));
+  //! 
+  //! println!("{:?}", person);
+  //! 
+  //! let person = Person::new_with_check();
+  //! let person = Person::set_with_check_first(&person, String::from("Laurent"));
+  //! let person = Person::set_with_check_last(&person, String::from("Deleris"));
+  //! let person = Person::set_with_check_age(&person, 50);
+  //! println!("{:?}", person);
+  //! 
+  //! let person = Person::new_with_check();
+  //! let person = Person::set_with_check_first(&person, String::from("12345678910"));
+  //! let person = Person::set_with_check_last(&person, String::from("Deleris"));
+  //! let person = Person::set_with_check_age(&person, 50);
+  //! println!("{:?}", person);
+  //! ```
+
+#[derive(Debug, PartialEq)]
   pub struct Person {
     first_name: Option<String>,
     last_name: Option<String>,

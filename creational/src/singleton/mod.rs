@@ -1,5 +1,27 @@
-use std::collections::HashMap;
+//! `singleton` module.
+//!
+//! # Example
+//! 
+//! ``` rust
+//! use singleton::*;
+//! use std::{thread, time};
+//! 
+//! println!("{}", AppRegistry::print());
+//! println!("Sleeping for 5 seconds.");
+//! thread::sleep(time::Duration::from_secs(1));
+//! println!("I woke up.");
+//! AppRegistry::add_user("1", "Laurent");
+//! println!("{}", AppRegistry::print());
+//! AppRegistry::add_user("2", "Pierre");
+//! AppRegistry::add_user("3", "Angel");
+//! println!("Is user with ID=1 registred?: {}", AppRegistry::is_user_registred("1"));
+//! println!("Removing ID=2");
+//! AppRegistry::remove_user("2");
+//! println!("Is user with ID=2 registred?: {}", AppRegistry::is_user_registred("2"));
+//! println!("All users registred are: {:?}", AppRegistry::get_all_user_names());
+//! ```
 
+use std::collections::HashMap;
 
 static mut INSTANCE: Option<AppRegistry> = None;
 
@@ -79,17 +101,13 @@ impl AppRegistry {
     names
   }
 
-  pub fn print() {
+  pub fn print() -> String {
     unsafe {
-      if let Some(ref mut app_registry) = INSTANCE {
-        app_registry._print();
+      if let Some(_) = INSTANCE {
+        format!("Application registry initialized")
       } else {
-        println!("Application registry not initialized")
-      };
+        format!("Application registry not initialized")
+      }
     }    
-  }
-
-  fn _print(&self) {
-    println!("{:?}", self.users);
   }
 }

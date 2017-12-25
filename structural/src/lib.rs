@@ -1,4 +1,5 @@
-
+//! This is documentation for the `structural` crate.
+//!
 #[macro_use]
 extern crate data_downloader_derive; 
 
@@ -14,6 +15,8 @@ extern crate colored;
 
 use colored::*;
 
+/// adapter design patterns example.
+///
 pub fn adapter() {
     use adapter::*;
 
@@ -26,6 +29,8 @@ pub fn adapter() {
     logger.log_info(String::from("Bye!"));
 }
 
+/// decorator design patterns example.
+///
 pub fn decorator() {
     use decorator::desserts::*;
 
@@ -59,10 +64,10 @@ pub fn decorator() {
     for r in res.iter() {
         println!("{}", r);
     }
-    
-
 }
 
+/// bridge design patterns example.
+///
 pub fn bridge() {
     use bridge::key::*;
 
@@ -77,6 +82,8 @@ pub fn bridge() {
 
 }
 
+/// composite design patterns example.
+///
 pub fn composite() {
     
     use composite::*;
@@ -105,6 +112,8 @@ pub fn composite() {
     tree.print(String::from("-"));
 }
 
+/// facade design patterns example.
+///
 pub fn facade() {
     use facade::with_struct::*;
 
@@ -112,9 +121,10 @@ pub fn facade() {
     let url = String::from("google.com");
     let reader = DataReader;
     println!("{:?}", reader.read_person(url));
-
 }
 
+/// facade (with derive trait) design patterns example.
+///
 pub fn facade_with_derive_trait() {
     use facade::with_derive_trait::*;
 
@@ -122,9 +132,10 @@ pub fn facade_with_derive_trait() {
     let url = String::from("google.com");
     let reader = DataReader;
     println!("{:?}", reader.read_person(url));
-
 }
 
+/// flyweight design patterns example.
+///
 pub fn flyweight() {
     use flyweight::*;
 
@@ -145,9 +156,10 @@ pub fn flyweight() {
     graphic.draw();
 
     println!("Total number of circle objects created: {}", circles.circles_created());
-
 }
 
+/// proxy design patterns example.
+///
 pub fn proxy() {
     use proxy::*;
     use std::collections::HashMap;

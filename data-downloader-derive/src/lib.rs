@@ -1,3 +1,5 @@
+//! This is documentation for the `data-downloader-derive` crate.
+//!
 extern crate proc_macro;
 extern crate syn;
 #[macro_use]
@@ -5,6 +7,8 @@ extern crate quote;
 
 use proc_macro::TokenStream;
 
+/// Macro to derive DataDownloader for facade example.
+///
 #[proc_macro_derive(DataDownloader)]
 pub fn download(input: TokenStream) -> TokenStream {
     // Construct a string representation of the type definition
@@ -20,6 +24,8 @@ pub fn download(input: TokenStream) -> TokenStream {
     gen.parse().unwrap()
 }
 
+/// Implementation of trait DataDownloader.
+/// 
 fn impl_download(ast: &syn::DeriveInput) -> quote::Tokens {
     let name = &ast.ident;
     quote! {
@@ -32,6 +38,8 @@ fn impl_download(ast: &syn::DeriveInput) -> quote::Tokens {
     }
 }
 
+/// Macro to derive DataDecoder for facade example.
+///
 #[proc_macro_derive(DataDecoder)]
 pub fn decode(input: TokenStream) -> TokenStream {
     // Construct a string representation of the type definition
@@ -47,6 +55,8 @@ pub fn decode(input: TokenStream) -> TokenStream {
     gen.parse().unwrap()
 }
 
+/// Implementation of trait DataDecoder.
+/// 
 fn impl_decode(ast: &syn::DeriveInput) -> quote::Tokens {
     let name = &ast.ident;
     quote! {
@@ -59,6 +69,8 @@ fn impl_decode(ast: &syn::DeriveInput) -> quote::Tokens {
     }
 }
 
+/// Macro to derive DataDeserializer for facade example.
+///
 #[proc_macro_derive(DataDeserializer)]
 pub fn parse(input: TokenStream) -> TokenStream {
     // Construct a string representation of the type definition
@@ -74,6 +86,8 @@ pub fn parse(input: TokenStream) -> TokenStream {
     gen.parse().unwrap()
 }
 
+/// Implementation of trait DataDeserializer.
+/// 
 fn impl_parse(ast: &syn::DeriveInput) -> quote::Tokens {
     let name = &ast.ident;
     quote! {

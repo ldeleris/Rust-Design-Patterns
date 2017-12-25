@@ -1,10 +1,20 @@
+//! `static_factory` module.
+//!
+//! # Example
+//! 
+//! ``` rust
+//! 
+//! let animal: Box<Animal> = from_str("Bird");
+//! println!("Animal: {}", animal.print());
+//! ```
+
 use std;
 
 pub trait Animal 
     where Self: std::fmt::Debug
 {
-    fn print(&self) {
-        println!("{:?}", self);
+    fn print(&self) -> String {
+        format!("{:?}", self)
     }
 }
 #[derive(Debug)]

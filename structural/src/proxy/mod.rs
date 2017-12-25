@@ -1,3 +1,23 @@
+//! `proxy` module.
+//!
+//! # Example
+//! 
+//! ``` rust
+//! use proxy::*;
+//! use std::collections::HashMap;
+//! 
+//! let mut file_map: HashMap<&str, (&str, Box<FileReader>)> = HashMap::new();
+//! file_map.insert("file1.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file1.txt")))));
+//! file_map.insert("file2.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file2.txt")))));
+//! file_map.insert("file3.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file3.txt")))));
+//! file_map.insert("file4.txt", ("FileReaderReal", Box::new(FileReaderReal::new(String::from("file1.txt")))));
+//! 
+//! println!("Created the map. You should have seen file1.txt read because it wasn't used in a proxy.");
+//! for (k, v) in file_map.iter_mut() { 
+//!     println!("Reading {} from the {}: {}", k, v.0, v.1.read_file_contents()); 
+//! }
+//! ```
+  
 use std::io::BufReader;
 use std::fs::File;
 use std::io::Read;

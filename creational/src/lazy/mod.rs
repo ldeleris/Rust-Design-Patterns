@@ -1,3 +1,17 @@
+//! `lazy` module.
+//!
+//! # Example
+//! 
+//! ``` rust
+//! use lazy::*;
+//! 
+//! let mut circle = Circle::new();
+//! println!("The basic area for a circle with radius 2.5 is {}", circle.area(2.5, false));
+//! println!("The precise area for a circle with radius 2.5 is {}", circle.area(2.5, true));
+//! println!("The basic area for a circle with radius 6.78 is {}", circle.area(6.78, false));
+//! println!("The precise area for a circle with radius 6.78 is {}", circle.area(6.78, true));
+//! ```
+
 use std::io;
 use std::io::Read;
 use std::fs::File;

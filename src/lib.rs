@@ -1,9 +1,12 @@
-extern crate colored;
+//! This is documentation for the `design-patterns` crate.
+//!
 extern crate creational;
 extern crate structural;
 extern crate behavioral;
 extern crate functional;
 
+/// Creational design patterns examples.
+///
 pub fn creational() {
     use creational::*; 
 
@@ -19,6 +22,8 @@ pub fn creational() {
     prototype();
 }
 
+/// Structural design patterns examples.
+///
 pub fn structural() {
     use structural::*;
 
@@ -33,12 +38,22 @@ pub fn structural() {
     proxy();
 }
 
+/// Behavioral design patterns examples.
+///
 pub fn behavioral() {
-    //use behavioral::*;
+    use behavioral::*;
 
     println!("==== Behavioral ====");
+    value_object();
+    null_object();
+    strategy();
+    command();
+    chain_of_responsability();
+    interpreter();
 }
 
+/// Functional design patterns examples.
+///
 pub fn functional() {
     //use functional::*;
 

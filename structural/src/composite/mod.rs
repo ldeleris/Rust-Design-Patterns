@@ -1,4 +1,33 @@
-
+//! `composite` module.
+//!
+//! # Example
+//! 
+//! ``` rust
+//! use composite::*;
+//! 
+//! let mut tree = Tree::new();
+//! tree.add(Box::new(Leaf::new(String::from("leaf 1"))));
+//! 
+//! let mut subtree1 = Tree::new();
+//! subtree1.add(Box::new(Leaf::new(String::from("leaf 2"))));
+//! 
+//! let mut subtree2 = Tree::new();
+//! subtree2.add(Box::new(Leaf::new(String::from("leaf 3"))));
+//! subtree2.add(Box::new(Leaf::new(String::from("leaf 4"))));
+//! subtree1.add(Box::new(subtree2));
+//! tree.add(Box::new(subtree1));
+//! 
+//! let mut subtree3 = Tree::new();
+//! let mut subtree4 = Tree::new();
+//! subtree4.add(Box::new(Leaf::new(String::from("leaf 5"))));
+//! subtree4.add(Box::new(Leaf::new(String::from("leaf 6"))));
+//! 
+//! subtree3.add(Box::new(subtree4));
+//! tree.add(Box::new(subtree3));
+//! 
+//! tree.print(String::from("-")); 
+//! ```
+ 
 pub trait Node {
   fn print(&self, prefix: String);
 }

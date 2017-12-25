@@ -1,4 +1,7 @@
+//! `facade` module.
+//!
 
+  
 #[derive(Debug)]
 pub struct Person {
   name: Option<String>,
@@ -6,6 +9,18 @@ pub struct Person {
 }
 
 pub mod with_struct {
+  //! `with_struct` module.
+  //! 
+  //! # Example
+  //! 
+  //! ``` rust
+  //!  use facade::with_derive_trait::*;
+  //! 
+  //!  let url = String::from("google.com");
+  //!  let reader = DataReader;
+  //!  println!("{:?}", reader.read_person(url));
+  //! ```
+
   use facade::Person;
 
   struct DataDownloader;
@@ -50,6 +65,18 @@ pub mod with_struct {
 }
 
 pub mod with_derive_trait {
+  //! `with_derive_trait` module.
+  //! 
+  //! # Example
+  //! 
+  //! ``` rust
+  //! use facade::with_struct::*;
+  //! 
+  //! let url = String::from("google.com");
+  //! let reader = DataReader;
+  //! println!("{:?}", reader.read_person(url));
+  //! ```
+
   use facade::Person;
 
   trait DataDownloader {

@@ -1,4 +1,22 @@
+//! `bridge` module.
+//!
+//! # Example
+//! 
+//! ``` rust
+//! use bridge::key::*;
+//! 
+//! let house = HouseOneDoor::new(Box::new(HouseDoorKey));
+//! println!("{}", house.enter());
+//! println!("{}", house.leave());
+//! let garage = CarOneDoor::new(Box::new(CarDoorKey));
+//! println!("{}", garage.enter());
+//! println!("{}", garage.leave());   
+//! ```
+ 
 pub mod key {
+  //! `key` module.
+  //! 
+  
   pub trait Key {
     fn open(&self) -> String;
     fn close(&self) -> String;
