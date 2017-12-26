@@ -46,7 +46,9 @@ pub fn behavioral() {
     println!("==== Behavioral ====");
     value_object();
     null_object();
-    strategy();
+    strategy_std();
+    strategy_opt();
+    strategy_closure();
     command();
     chain_of_responsability();
     interpreter();

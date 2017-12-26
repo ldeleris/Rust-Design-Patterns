@@ -49,11 +49,11 @@ pub fn null_object() {
         println!("Message: {:?}", data_generator.get_message());
     };
 }
-pub fn strategy() {
-    use strategy::*;
+pub fn strategy_std() {
+    use strategy::std::*;
 
     println!("--------");
-    println!("strategy");
+    println!("strategy standard");
     println!("--------");
 
     let csv_people = ParserFactory::new("persons.csv");
@@ -63,6 +63,35 @@ pub fn strategy() {
     
     println!("{}", application_csv.write("persons.csv"));
     println!("{}", application_json.write("persons.json"));
+}
+pub fn strategy_opt() {
+    use strategy::opt::*;
+
+    println!("--------");
+    println!("strategy option");
+    println!("--------");
+
+    let csv_people = ParserFactory::new("persons.csv");
+    let json_people = ParserFactory::new("persons.json");
+    let application_csv = PersonApplication::new(csv_people);
+    let application_json = PersonApplication::new(json_people);
+    
+    println!("{}", application_csv.write("persons.csv"));
+    println!("{}", application_json.write("persons.json"));
+}
+pub fn strategy_closure() {
+    use strategy::closure::*;
+
+    println!("--------");
+    println!("strategy closure");
+    println!("--------");
+
+    let application_csv = Application::new(StrategyFactory::new("persons.csv"));
+    let application_json = Application::new(StrategyFactory::new("persons.json"));
+    
+    println!("{}", application_csv.write("persons.csv"));
+    println!("{}", application_json.write("persons.json"));
+
 }
 pub fn command() {
     use command::*;
