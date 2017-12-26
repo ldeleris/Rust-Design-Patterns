@@ -92,13 +92,25 @@ pub fn strategy_closure() {
     }
 }
 pub fn command() {
-    use command::*;
+    use command::std::*;
+    use std::rc::Rc;
 
     println!("-------");
     println!("command");
     println!("-------");
 
+    let robot = Robot;
+    let mut robot_controller = RobotController::new();
+
+    println!("{}", robot_controller.issue_command(Rc::new(MakeSandwichCommand::new(robot.clone()))));
+    println!("{}", robot_controller.issue_command(Rc::new(PourJuiceCommand::new(robot.clone()))));
+    println!("I'm eating and having some juice.");
+    println!("{}", robot_controller.issue_command(Rc::new(CleanupCommand::new(robot.clone()))));
+
+    println!("Here is what I asked my robot to do:");
+    robot_controller.show_history();
 }
+
 pub fn chain_of_responsability() {
     use chain_of_responsability::*;
 
