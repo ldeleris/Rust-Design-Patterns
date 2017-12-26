@@ -1,6 +1,15 @@
 //! This is documentation for the `behavioral` crate.
 //!
 
+
+#[macro_use]
+extern crate serde_derive;
+
+extern crate serde;
+extern crate serde_json;
+extern crate csv;
+extern crate rustc_serialize;
+
 pub mod value_object;
 pub mod null_object;
 pub mod strategy;
@@ -47,6 +56,13 @@ pub fn strategy() {
     println!("strategy");
     println!("--------");
 
+    let csv_people = ParserFactory::new("persons.csv");
+    let json_people = ParserFactory::new("persons.json");
+    let application_csv = PersonApplication::new(csv_people);
+    let application_json = PersonApplication::new(json_people);
+    
+    println!("{}", application_csv.write("persons.csv"));
+    println!("{}", application_json.write("persons.json"));
 }
 pub fn command() {
     use command::*;

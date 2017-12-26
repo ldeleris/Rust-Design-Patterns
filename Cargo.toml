@@ -10,5 +10,10 @@ behavioral = { path = "behavioral" }
 functional = { path = "functional" }
 data-downloader-derive = { path = "data-downloader-derive" }
 colored = "1.6"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0.8"
+csv = "0.15.0"
+rustc-serialize = "0.3"
 
 [workspace]
