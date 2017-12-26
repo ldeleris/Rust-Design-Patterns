@@ -86,12 +86,10 @@ pub fn strategy_closure() {
     println!("strategy closure");
     println!("--------");
 
-    let application_csv = Application::new(StrategyFactory::new("persons.csv"));
-    let application_json = Application::new(StrategyFactory::new("persons.json"));
-    
-    println!("{}", application_csv.write("persons.csv"));
-    println!("{}", application_json.write("persons.json"));
-
+    let files = vec!["persons.csv", "persons.json"];
+    for file in files {
+        println!("Got the following data from {}: {:?}", file, Person::from_file(file));
+    }
 }
 pub fn command() {
     use command::*;

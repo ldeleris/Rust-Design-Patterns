@@ -199,6 +199,13 @@ pub mod closure {
     location: Option<String>,
   }
 
+  impl Person {
+    pub fn from_file(file: &str) -> Result<Vec<Person>, Box<Error>> {
+      let application = Application::new(StrategyFactory::new(file));
+      application.get(file)
+    }
+  }
+
   use std::fmt::Debug;
   pub struct Application<T> {
     strategy: Box<Fn(&str) -> Result<Vec<T>, Box<Error>>>,
@@ -210,7 +217,10 @@ pub mod closure {
       }
     }
     pub fn write(&self, file: &str) -> String {
-      format!("Got the following data {:#?}", (self.strategy)(file))
+      format!("Got the following data {:#?}", self.get(file))
+    }
+    pub fn get(&self, file: &str) -> Result<Vec<T>, Box<Error>> {
+      (self.strategy)(file)
     }
   }
 
