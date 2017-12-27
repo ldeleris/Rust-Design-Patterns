@@ -51,6 +51,7 @@ pub fn behavioral() {
     strategy_closure();
     command();
     chain_of_responsability();
+    chain_of_responsability_closure();
     interpreter();
 }
 

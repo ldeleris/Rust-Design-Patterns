@@ -112,11 +112,50 @@ pub fn command() {
 }
 
 pub fn chain_of_responsability() {
-    use chain_of_responsability::*;
+    use chain_of_responsability::std::*;
+    use chain_of_responsability::Money;
 
     println!("-----------------------");
     println!("chain of responsability");
     println!("-----------------------");
+
+    let atm = ATM::new();
+    println!("Request 135:");
+    atm.request_money(Money::new(135));
+    println!("Request 131:");
+    atm.request_money(Money::new(131));
+    println!("Request 5:");
+    atm.request_money(Money::new(5));
+    println!("Request 10:");
+    atm.request_money(Money::new(10));
+    println!("Request 20:");
+    atm.request_money(Money::new(20));
+    println!("Request 50:");
+    atm.request_money(Money::new(50));
+
+}
+
+pub fn chain_of_responsability_closure() {
+    use chain_of_responsability::closure::*;
+    use chain_of_responsability::Money;
+
+    println!("-----------------------");
+    println!("chain of responsability closure");
+    println!("-----------------------");
+
+    println!("Request 135:");
+    ATM::request_money(Money::new(135));
+    println!("Request 131:");
+    ATM::request_money(Money::new(131));
+    println!("Request 5:");
+    ATM::request_money(Money::new(5));
+    println!("Request 10:");
+    ATM::request_money(Money::new(10));
+    println!("Request 20:");
+    ATM::request_money(Money::new(20));
+    println!("Request 50:");
+    ATM::request_money(Money::new(50));
+
 
 }
 pub fn interpreter() {
