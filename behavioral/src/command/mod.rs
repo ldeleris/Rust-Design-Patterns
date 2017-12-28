@@ -1,5 +1,23 @@
 
 pub mod std {
+  //! `std` module.
+  //!
+  //! # Example
+  //! 
+  //! ```rust
+  //! use behavioral::command::std::*;
+  //! use std::rc::Rc;
+  //! 
+  //! let robot = Robot;
+  //! let mut robot_controller = RobotController::new();
+  //! println!("{}", robot_controller.issue_command(Rc::new(MakeSandwichCommand::new(robot.clone()))));
+  //! println!("{}", robot_controller.issue_command(Rc::new(PourJuiceCommand::new(robot.clone()))));
+  //! println!("I'm eating and having some juice.");
+  //! println!("{}", robot_controller.issue_command(Rc::new(CleanupCommand::new(robot.clone()))));
+  //! println!("Here is what I asked my robot to do:");
+  //! robot_controller.show_history();
+  //! ```
+  
   use std::rc::Rc;
   use std;
 

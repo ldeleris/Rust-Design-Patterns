@@ -1,3 +1,17 @@
+  //! `iterator` module.
+  //!
+  //! # Example
+  //! 
+  //! ```rust
+  //! use behavioral::iterator::*;
+  //! 
+  //! let mut class_room = ClassRoom::new();
+  //! class_room.add(Student::new("Ivan", 26));
+  //! class_room.add(Student::new("Maria", 23));
+  //! class_room.add(Student::new("John", 25));
+  //! class_room.for_each(|s| println!("{:?}", s));
+  //! ```
+
 #[derive(Debug, Clone)]
 pub struct Student {
   name: String,

@@ -1,4 +1,18 @@
 pub mod std {
+  //! `std` module.
+  //!
+  //! # Example
+  //! 
+  //! ```rust
+  //! use behavioral::interpreter::std::*;
+  //! let expr = "1 2 + 3 * 9 10 + -";
+  //! println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+  //! let expr = "1 2 3 4 5 * * - +";
+  //! println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+  //! let expr = "12 -";
+  //! println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+  //! ```
+  
   use std;
   use std::collections::VecDeque;
 
@@ -126,6 +140,20 @@ pub mod std {
 }
 
 pub mod closure {
+  //! `closure` module.
+  //!
+  //! # Example
+  //! 
+  //! ```rust
+  //! use behavioral::interpreter::closure::*;
+  //! let expr = "1 2 + 3 * 9 10 + -";
+  //! println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+  //! let expr = "1 2 3 4 5 * * - +";
+  //! println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+  //! let expr = "12 -";
+  //! println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+  //! ```
+  
   use std;
   use std::collections::VecDeque;
 
