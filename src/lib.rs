@@ -54,6 +54,13 @@ pub fn behavioral() {
     chain_of_responsability_closure();
     interpreter_std();
     interpreter_closure();
+    iterator();
+    mediator();
+    memento();
+    observer();
+    state();
+    template_method();
+    visitor();
 }
 
 /// Functional design patterns examples.

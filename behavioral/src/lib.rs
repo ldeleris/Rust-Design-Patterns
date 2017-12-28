@@ -16,6 +16,13 @@ pub mod strategy;
 pub mod command; 
 pub mod chain_of_responsability;
 pub mod interpreter;
+pub mod iterator;
+pub mod mediator;
+pub mod memento;
+pub mod observer;
+pub mod state;
+pub mod template_method;
+pub mod visitor;
 
 pub fn value_object() {
     use value_object::*;
@@ -189,6 +196,62 @@ pub fn interpreter_closure() {
 
     let expr = "12 -";
     println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+}
+
+pub fn iterator() {
+    use iterator::*;
+
+    println!("--------");
+    println!("iterator");
+    println!("--------");
+
+    let mut class_room = ClassRoom::new();
+    class_room.add(Student::new("Ivan", 26));
+    class_room.add(Student::new("Maria", 23));
+    class_room.add(Student::new("John", 25));
+    class_room.for_each(|s| println!("{:?}", s));
+}
+pub fn mediator() {
+    use mediator::*;
+
+    println!("--------");
+    println!("mediator");
+    println!("--------");
+}
+pub fn memento() {
+    use memento::*;
+
+    println!("-------");
+    println!("memento");
+    println!("-------");
+}
+pub fn observer() {
+    use observer::*;
+
+    println!("--------");
+    println!("observer");
+    println!("--------");
+}
+pub fn state() {
+    use state::*;
+
+    println!("-----");
+    println!("state");
+    println!("-----");
+}
+pub fn template_method() {
+    use template_method::*;
+
+    println!("---------------");
+    println!("template method");
+    println!("---------------");
+}
+pub fn visitor() {
+    use visitor::*;
+
+    println!("-------");
+    println!("visitor");
+    println!("-------");
 }
 
 #[cfg(test)]
