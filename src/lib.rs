@@ -52,7 +52,8 @@ pub fn behavioral() {
     command();
     chain_of_responsability();
     chain_of_responsability_closure();
-    interpreter();
+    interpreter_std();
+    interpreter_closure();
 }
 
 /// Functional design patterns examples.

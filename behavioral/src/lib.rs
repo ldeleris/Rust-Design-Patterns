@@ -158,25 +158,28 @@ pub fn chain_of_responsability_closure() {
 
 
 }
-pub fn interpreter() {
+pub fn interpreter_std() {
     use interpreter::std::*;
 
     println!("-----------");
     println!("interpreter");
     println!("-----------");
 
-    let e1 = Add::new(Box::new(Number::new(1)), Box::new(Number::new(2)));
-    println!("1 + 2 = {}", e1.interpret());
-    if let Some(e) = Factory::new("+", Factory::new("1", None, None), Factory::new("2", None, None)) {
-        println!("1 + 2 = {}", e.interpret());
-    }
-
-    if let Some(e) = Factory::new("*", Factory::new("1", None, None), Factory::new("2", None, None)) {
-        println!("{:?} = {}", e, e.interpret());
-    }
-
-    let expr = "1 2 +";
+    let expr = "1 2 + 3 * 9 10 + -";
     println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+
+    let expr = "1 2 3 4 5 * * - +";
+    println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+
+    let expr = "12 -";
+    println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
+}
+pub fn interpreter_closure() {
+    use interpreter::closure::*;
+
+    println!("-----------");
+    println!("interpreter closure");
+    println!("-----------");
 
     let expr = "1 2 + 3 * 9 10 + -";
     println!("{} = {:?}", expr.clone(), RPNInterpreter::interpret(RPNParser::parse(expr)));
