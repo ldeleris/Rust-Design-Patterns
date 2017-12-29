@@ -299,11 +299,24 @@ pub fn observer() {
     post.add_comment(Comment::new(user_maria.clone(), "It is amazing! Thanks!"));
 }
 pub fn state() {
-    use state::*;
+    use state::std::*;
 
     println!("-----");
     println!("state");
     println!("-----");
+
+    let mut player = MediaPlayer::new();
+
+    player.press_play_or_pause_button();
+    player.press_play_or_pause_button();
+    player.press_play_or_pause_button();
+    player.press_play_or_pause_button();
+
+    player.press_eject_insert_button();
+    player.press_play_or_pause_button();
+    player.press_eject_insert_button();
+    player.press_play_or_pause_button();
+    player.press_eject_insert_button();
 }
 pub fn template_method() {
     use template_method::*;
