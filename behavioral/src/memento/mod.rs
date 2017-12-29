@@ -5,7 +5,23 @@ pub mod std {
   //! 
   //! ```rust
   //! use behavioral::memento::std::*;
-  //!   
+  //! 
+  //! let mut text_editor_manipulator = TextEditorManipulator::new();
+  //! text_editor_manipulator.append("This is a chapter about memento.");
+  //! println!("The text is: {}", text_editor_manipulator.read_text());
+  //! 
+  //! println!("Deleting 2 characters...");
+  //! text_editor_manipulator.delete();
+  //! text_editor_manipulator.delete();
+  //! println!("The text is: {}", text_editor_manipulator.read_text());
+  //! 
+  //! println!("Undoing...");
+  //! text_editor_manipulator.undo();
+  //! println!("The text is: {}", text_editor_manipulator.read_text());
+  //! 
+  //! println!("Undoing...");
+  //! text_editor_manipulator.undo();
+  //! println!("The text is: {}", text_editor_manipulator.read_text());
   //! ```
 
   use std::collections::VecDeque;
