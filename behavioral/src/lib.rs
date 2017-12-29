@@ -212,11 +212,39 @@ pub fn iterator() {
     class_room.for_each(|s| println!("{:?}", s));
 }
 pub fn mediator() {
-    use mediator::*;
+    use mediator::std::*;
 
     println!("--------");
     println!("mediator");
     println!("--------");
+
+    let mut school = School::new();
+    let student1 = Student::new("Ivan", 26);
+    let student2 = Student::new("Maria", 23);
+    let student3 = Student::new("John", 25);
+
+    let group1 = Group::new("Rust Design Patterns");
+    let group2 = Group::new("Scala design patterns");
+    let group3 = Group::new("Cloud computing");
+
+    school.add_student_to_group(student1.clone(), group1.clone());
+    school.add_student_to_group(student1.clone(), group2.clone());
+    school.add_student_to_group(student1.clone(), group3.clone());
+
+    school.add_student_to_group(student2.clone(), group1.clone());
+    school.add_student_to_group(student2.clone(), group3.clone());
+
+    school.add_student_to_group(student3.clone(), group1.clone());
+    school.add_student_to_group(student3.clone(), group2.clone());
+
+    school.notify_students_in_group(group1.clone(), "Design patterns in Rust are amazing!");
+
+    println!("{:?} is in groups: {:?}", student3.clone(), school.get_groups_for_student(student3.clone()));
+
+    school.remove_student_from_group(student3.clone(), group2.clone());
+    println!("{:?} is in groups: {:?}", student3.clone(), school.get_groups_for_student(student3.clone()));
+   
+    println!("Students in {:?} are {:?}", group1.clone(), school.get_students_in_group((group1.clone())));
 }
 pub fn memento() {
     use memento::*;
