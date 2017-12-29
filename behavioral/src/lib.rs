@@ -272,11 +272,31 @@ pub fn memento() {
         
 }
 pub fn observer() {
-    use observer::*;
+    use observer::std::*;
 
     println!("--------");
     println!("observer");
     println!("--------");
+
+    let user_yvan = User::new("Ivan");
+    let user_maria = User::new("Maria");
+    let user_john = User::new("John");
+
+    println!("Create a post...");
+    let mut post = Post::new(user_yvan.clone(), "This is a post about the observer design pattern.");
+
+    println!("Add a comment...");
+    post.add_comment(Comment::new(user_yvan.clone(), "I hope you like the post!"));
+
+    println!("Maria and John subscribe to the comments");
+    post.add_observer(Box::new(user_john));
+    post.add_observer(Box::new(user_maria.clone()));
+
+    println!("Add a comment...");
+    post.add_comment(Comment::new(user_yvan.clone(), "Why are you so quiet? Do you like it?"));
+
+    println!("Add a comment...");
+    post.add_comment(Comment::new(user_maria.clone(), "It is amazing! Thanks!"));
 }
 pub fn state() {
     use state::*;
