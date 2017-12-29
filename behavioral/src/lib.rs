@@ -247,11 +247,29 @@ pub fn mediator() {
     println!("Students in {:?} are {:?}", group1.clone(), school.get_students_in_group((group1.clone())));
 }
 pub fn memento() {
-    use memento::*;
+    use memento::std::*;
 
     println!("-------");
     println!("memento");
     println!("-------");
+
+    let mut text_editor_manipulator = TextEditorManipulator::new();
+    text_editor_manipulator.append("This is a chapter about memento.");
+    println!("The text is: {}", text_editor_manipulator.read_text());
+    
+    println!("Deleting 2 characters...");
+    text_editor_manipulator.delete();
+    text_editor_manipulator.delete();
+    println!("The text is: {}", text_editor_manipulator.read_text());
+
+    println!("Undoing...");
+    text_editor_manipulator.undo();
+    println!("The text is: {}", text_editor_manipulator.read_text());
+    
+    println!("Undoing...");
+    text_editor_manipulator.undo();
+    println!("The text is: {}", text_editor_manipulator.read_text());
+        
 }
 pub fn observer() {
     use observer::*;
