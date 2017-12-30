@@ -3,11 +3,19 @@ pub mod std {
   //!
   //! # Example
   //! 
-  //! ```rust
+  //! ```rust,ignore
   //! use behavioral::template_method::std::*;
   //! 
-  //! let mut player = MediaPlayer::new();
+  //! let json_data_finder = JsonDataFinder;
+  //! let csv_data_finder = CsvDataFinder;
   //! 
+  //! println!("Find a person with name Laurent: {:?}", json_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Laurent")))));
+  //! println!("Find a person with name Pierre: {:?}", json_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Pierre")))));
+  //! println!("Find a person with name Yvan: {:?}", json_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Yvan")))));
+  //! 
+  //! println!("Find a person with name Laurent: {:?}", csv_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Laurent")))));
+  //! println!("Find a person with name Pierre: {:?}", csv_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Pierre")))));
+  //! println!("Find a person with name Yvan: {:?}", csv_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Yvan")))));
   //! ```
   
   use serde;
