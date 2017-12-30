@@ -319,12 +319,24 @@ pub fn state() {
     player.press_eject_insert_button();
 }
 pub fn template_method() {
-    use template_method::*;
+    use template_method::std::*;
 
     println!("---------------");
     println!("template method");
     println!("---------------");
+
+    let json_data_finder = JsonDataFinder;
+    let csv_data_finder = CsvDataFinder;
+
+    println!("Find a person with name Laurent: {:?}", json_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Laurent")))));
+    println!("Find a person with name Pierre: {:?}", json_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Pierre")))));
+    println!("Find a person with name Yvan: {:?}", json_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Yvan")))));
+
+    println!("Find a person with name Laurent: {:?}", csv_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Laurent")))));
+    println!("Find a person with name Pierre: {:?}", csv_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Pierre")))));
+    println!("Find a person with name Yvan: {:?}", csv_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Yvan")))));
 }
+
 pub fn visitor() {
     use visitor::*;
 

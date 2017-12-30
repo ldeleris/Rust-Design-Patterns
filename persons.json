@@ -2,16 +2,16 @@
   {
     "name": "Laurent",
     "age": 50,
-    "location": "Json Salvagnac"
+    "address": "Json Salvagnac"
   },
   {
     "name": "Pierre",
     "age": 25,
-    "location": "Json Toulouse"
+    "address": "Json Toulouse"
   },
   {
     "name": "Angel",
     "age": 49,
-    "location": "json Montauban"
+    "address": "json Montauban"
   }
 ]

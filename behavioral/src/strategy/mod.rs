@@ -22,13 +22,13 @@ pub mod std {
   use serde_json; 
   use csv;
   use std::fs::File;
-  use std::error::Error;
+  use std::error::Error; 
 
   #[derive(Serialize, Deserialize, RustcDecodable, Debug)]
   pub struct Person {
     name: String,
     age: i32,
-    location: String,
+    address: String,
   }
 
   pub trait Parser<T> {
