@@ -18,7 +18,6 @@ pub mod std {
   //! println!("{:#?}", application_json.write("persons.json"));
   //! ```
 
-  use serde;
   use serde_json; 
   use csv;
   use std::fs::File;
@@ -103,7 +102,6 @@ pub mod opt {
   //! println!("{:#?}", application_json.write("persons.json"));
   //! ```
 
-  use serde;
   use serde_json; 
   use csv;
   use std::fs::File;
@@ -186,7 +184,6 @@ pub mod closure {
   //! println!("{}", application_json.write("persons.json"));
   //! ```
 
-  use serde;
   use serde_json; 
   use csv;
   use std::fs::File;

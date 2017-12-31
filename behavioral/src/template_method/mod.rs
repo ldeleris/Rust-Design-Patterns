@@ -18,11 +18,9 @@ pub mod std {
   //! println!("Find a person with name Yvan: {:?}", csv_data_finder.find(|x| x.into_iter().find(|p| p.name == Some(String::from("Yvan")))));
   //! ```
   
-  use serde;
   use serde_json; 
   use csv;
   use std::fs::File;
-  use std::error::Error;
   use std::io::prelude::*;
 
   #[derive(Serialize, Deserialize, RustcDecodable, Debug)]
@@ -56,7 +54,7 @@ pub mod std {
     fn read_data(&self) -> String {
       let mut contents = String::new();
       if let Ok(mut file) = File::open("persons.json") {     
-        file.read_to_string(&mut contents);
+        let _ = file.read_to_string(&mut contents);
       };
       contents
     }
@@ -77,7 +75,7 @@ pub mod std {
     fn read_data(&self) -> String {
       let mut contents = String::new();
       if let Ok(mut file) = File::open("persons.csv") {     
-        file.read_to_string(&mut contents);
+        let _ = file.read_to_string(&mut contents);
       };
       contents
     }

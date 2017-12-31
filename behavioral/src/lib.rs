@@ -338,11 +338,30 @@ pub fn template_method() {
 }
 
 pub fn visitor() {
-    use visitor::*;
+    use visitor::std::*;
 
     println!("-------");
     println!("visitor");
     println!("-------");
+
+    let mut document = Document::new(
+      vec!(
+        Element::title("The Visitor Pattern Example."),
+        Element::text("The visitor pattern helps us add extra functionality without changing the classes."),
+        Element::hyperlink("Go check it online!", "https://www.google.com/"),
+        Element::text("Thanks")
+      )
+    );
+
+    let mut html_exporter = HtmlExporterVisitor::new();
+    println!("Export to html:");
+    document.accept(&mut html_exporter);
+    println!("{}", html_exporter.get_html());     
+
+    let mut plain_text_exporter = PlainTextExporterVisitor::new();
+    println!("Export to plain text:");
+    document.accept(&mut plain_text_exporter);
+    println!("{}", plain_text_exporter.get_text()); 
 }
 
 #[cfg(test)]

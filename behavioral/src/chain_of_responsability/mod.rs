@@ -136,7 +136,6 @@ pub mod std {
 }
 
 pub mod closure {
-  use std::rc::Rc;
   use super::Money;
 
   pub struct Dispenser {

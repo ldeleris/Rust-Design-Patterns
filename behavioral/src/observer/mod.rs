@@ -99,9 +99,6 @@ pub mod std {
       self.comments.push(comment);
       self.notify_observers();
     }
-    fn print(&self) -> String {
-        format!("{:?}", self)
-    }
     pub fn comments(&self) -> Vec<Comment> { self.comments.clone() }
   }
   impl Observable for Post {
