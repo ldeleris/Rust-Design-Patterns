@@ -66,9 +66,12 @@ pub fn behavioral() {
 /// Functional design patterns examples.
 ///
 pub fn functional() {
-    //use functional::*;
+    use functional::*;
 
     println!("==== Functional ====");
+    monoids();
+    functors();
+    monads();
 }
 
 #[cfg(test)]

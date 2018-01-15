@@ -63,13 +63,13 @@ pub fn strategy_std() {
     println!("strategy standard");
     println!("--------");
 
-    let csv_people = ParserFactory::new("persons.csv");
-    let json_people = ParserFactory::new("persons.json");
+    let csv_people = ParserFactory::new("./ressources/persons.csv");
+    let json_people = ParserFactory::new("./ressources/persons.json");
     let application_csv = PersonApplication::new(csv_people);
     let application_json = PersonApplication::new(json_people);
     
-    println!("{}", application_csv.write("persons.csv"));
-    println!("{}", application_json.write("persons.json"));
+    println!("{}", application_csv.write("./ressources/persons.csv"));
+    println!("{}", application_json.write("./ressources/persons.json"));
 }
 pub fn strategy_opt() {
     use strategy::opt::*;
@@ -78,13 +78,13 @@ pub fn strategy_opt() {
     println!("strategy option");
     println!("--------");
 
-    let csv_people = ParserFactory::new("persons.csv");
-    let json_people = ParserFactory::new("persons.json");
+    let csv_people = ParserFactory::new("./ressources/persons.csv");
+    let json_people = ParserFactory::new("./ressources/persons.json");
     let application_csv = PersonApplication::new(csv_people);
     let application_json = PersonApplication::new(json_people);
     
-    println!("{}", application_csv.write("persons.csv"));
-    println!("{}", application_json.write("persons.json"));
+    println!("{}", application_csv.write("./ressources/persons.csv"));
+    println!("{}", application_json.write("./ressources/persons.json"));
 }
 pub fn strategy_closure() {
     use strategy::closure::*;
@@ -93,7 +93,7 @@ pub fn strategy_closure() {
     println!("strategy closure");
     println!("--------");
 
-    let files = vec!["persons.csv", "persons.json"];
+    let files = vec!["./ressources/persons.csv", "./ressources/persons.json"];
     for file in files {
         println!("Got the following data from {}: {:?}", file, Person::from_file(file));
     }

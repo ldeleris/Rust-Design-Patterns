@@ -53,7 +53,7 @@ impl Circle {
 
 fn read_pi_file() -> Result<f64, io::Error> {
   let mut s = String::new();
-  File::open("pi.txt")?.read_to_string(&mut s)?;
+  File::open("./ressources/pi.txt")?.read_to_string(&mut s)?;
   println!("Precise pi loaded: {}", s);
   let pi: f64 = s.parse().unwrap();
   Ok(pi)

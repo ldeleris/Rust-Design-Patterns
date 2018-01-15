@@ -50,14 +50,14 @@ pub fn decorator() {
 
     use decorator::input_readers::*;
 
-    let reader = AdvancedInputReader::new("input.txt");
+    let reader = AdvancedInputReader::new("./ressources/input.txt");
     let mut reader = CapitalizedInputReader::new(reader);
     let res = reader.read_lines();
     for r in res.iter() {
         println!("{}", r);
     }
 
-    let reader = AdvancedInputReader::new("input.txt");
+    let reader = AdvancedInputReader::new("./ressources/input.txt");
     let reader = CapitalizedInputReader::new(reader);
     let mut reader = LenghtInputReader::new(reader);
     let res = reader.read_lines();
@@ -166,10 +166,10 @@ pub fn proxy() {
 
     println!("Proxy");
     let mut file_map: HashMap<&str, (&str, Box<FileReader>)> = HashMap::new();
-    file_map.insert("file1.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file1.txt")))));
-    file_map.insert("file2.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file2.txt")))));
-    file_map.insert("file3.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("file3.txt")))));
-    file_map.insert("file4.txt", ("FileReaderReal", Box::new(FileReaderReal::new(String::from("file1.txt")))));
+    file_map.insert("file1.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("./ressources/file1.txt")))));
+    file_map.insert("file2.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("./ressources/file2.txt")))));
+    file_map.insert("file3.txt", ("FileReaderProxy", Box::new(FileReaderProxy::new(String::from("./ressources/file3.txt")))));
+    file_map.insert("file4.txt", ("FileReaderReal", Box::new(FileReaderReal::new(String::from("./ressources/file1.txt")))));
     
     println!("Created the map. You should have seen file1.txt read because it wasn't used in a proxy.");
     for (k, v) in file_map.iter_mut() { 
